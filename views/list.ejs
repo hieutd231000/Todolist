@@ -1,0 +1,25 @@
+<%- include('header'); -%>
+        <div class="box" id="heading">
+            <h1><%= typeList %>  </h1>
+        </div>
+
+        <div class="box">
+            <!-- control-flow in html template
+            pass your data from your server to your website -->
+            <% for(var i=0 ; i<newAddItem.length; i++){ %>
+                <div class="item">
+                    <input type="checkbox">
+                    <p> <%= newAddItem[i] %> </p>
+                </div>
+            <% } %>
+            
+            <form class="item" action="/" method="post">
+                <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+                <!-- element value help know type of newItem (workList or todoList) -->
+                <button type="submit" name="button" value="<%= typeList %>">+</button>
+            </form>
+        </div>
+<%- include('footer'); -%>
+
+        
+   
