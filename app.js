@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { getDate, getDay } = require("./date");
-const items = ["Buy food","Clean the house"];
+const items = ["Buy food","Clean the house", "Do homework"];
 const workItems = [];
 const app = express();
 
