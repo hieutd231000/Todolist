@@ -57,7 +57,6 @@ app.post("/",(req,res)=>{
             const new_item = new Item({name: itemName});
             new_item.save();
             res.redirect("/");
-            res.redirect("/");
         // Type customer list
         }else{
             const itemName = req.body.newItem;
