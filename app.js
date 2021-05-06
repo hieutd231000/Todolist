@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-mongoose.connect('mongodb+srv://admin_hieu:hieu2310@cluster0.t9kk1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority/todolistDB', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost/todolistDB', {useNewUrlParser: true, useUnifiedTopology: true});
 // Use lodash
 const {upperFirst,toLower} = require("lodash");
 const { getDate, getDay } = require("./date");
@@ -24,7 +24,7 @@ const Item = mongoose.model('Item', itemsSchema);
 //Crete document
 const list1 = new Item({name: "Buy food"});
 const list2 = new Item({name: "Clean the house"});
-const list3 = new Item({name: "Do homework"});
+const list3 = new Item({name: "Learn japanese"});
 
 app.get("/",(req,res)=>{
     const currentDay = getDate(); // Node module
