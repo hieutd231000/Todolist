@@ -7,16 +7,23 @@
             <!-- control-flow in html template
             pass your data from your server to your website -->
             <% for(var i=0 ; i<newAddItem.length; i++){ %>
+                
+            <form action="/delete" method="post">
                 <div class="item">
-                    <input type="checkbox">
-                    <p> <%= newAddItem[i] %> </p>
+                    <input type="checkbox" name="check_box" value="<%= newAddItem[i]._id %>" onChange="this.form.submit()">
+                    <input type="hidden" name="type" value="<%= typeList %>">
+                    <p> <%= newAddItem[i].name %> </p>
                 </div>
+            </form>
             <% } %>
             
             <form class="item" action="/" method="post">
                 <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
-                <!-- element value help know type of newItem (workList or todoList) -->
+                <!-- element value help know type of newItem (customerList or myList) -->
                 <button type="submit" name="button" value="<%= typeList %>">+</button>
             </form>
         </div>
 <%- include('footer'); -%>
+
+        
+   
