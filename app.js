@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost/todolistDB', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://admin_hieu:hieu2310@cluster0.t9kk1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority/todolistDB', {useNewUrlParser: true, useUnifiedTopology: true});
 // Use lodash
 const {upperFirst,toLower} = require("lodash");
 const { getDate, getDay } = require("./date");
