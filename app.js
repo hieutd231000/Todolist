@@ -24,7 +24,7 @@ const Item = mongoose.model('Item', itemsSchema);
 //Crete document
 const list1 = new Item({name: "Buy food"});
 const list2 = new Item({name: "Clean the house"});
-const list3 = new Item({name: "Learn japanese"});
+const list3 = new Item({name: "Learn Japanese"});
 
 app.get("/",(req,res)=>{
     const currentDay = getDate(); // Node module
@@ -130,6 +130,11 @@ app.get("/:path",(req,res)=>{
     });
 });
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
 app.listen(process.env.PORT || 3000,()=>{
-    console.log("Server start at port 3000");
+    console.log("Server has started at successfully");
 })
